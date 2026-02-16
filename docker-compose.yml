@@ -1,0 +1,14 @@
+services:
+  gateway:
+    build: .
+    ports:
+      - "18789:18789"
+    volumes:
+      - openclaw-data:/data/.openclaw
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+    restart: unless-stopped
+
+volumes:
+  openclaw-data:

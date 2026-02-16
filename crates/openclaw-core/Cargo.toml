@@ -1,0 +1,19 @@
+[package]
+name = "openclaw-core"
+description = "Core types, traits, and error definitions for OpenClaw"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+chrono = { workspace = true }
+uuid = { workspace = true }
+url = { workspace = true }
+bytes = { workspace = true }
+mime = { workspace = true }
+tracing = { workspace = true }
+async-trait = "0.1"

@@ -1,0 +1,83 @@
+{
+  // OpenClaw Configuration (Rust Edition)
+  // Copy this file to ~/.openclaw/config.json5 and customize
+
+  gateway: {
+    port: 18789,
+    // authToken: "your-secret-token",
+    controlUi: true,
+    maxConnections: 1000,
+  },
+
+  models: {
+    defaultModel: "openai/gpt-4o",
+    providers: {
+      openai: {
+        apiKey: "${OPENAI_API_KEY}",
+        models: ["gpt-4o", "gpt-4o-mini", "gpt-4-turbo"],
+      },
+      anthropic: {
+        apiKey: "${ANTHROPIC_API_KEY}",
+        models: ["claude-sonnet-4-20250514", "claude-3-5-haiku-20241022"],
+      },
+      // google: {
+      //   apiKey: "${GOOGLE_API_KEY}",
+      //   models: ["gemini-2.0-flash", "gemini-2.5-pro"],
+      // },
+    },
+    aliases: {
+      fast: "openai/gpt-4o-mini",
+      smart: "anthropic/claude-sonnet-4-20250514",
+    },
+  },
+
+  agents: {
+    default: {
+      displayName: "OpenClaw Assistant",
+      model: "openai/gpt-4o",
+      // systemPrompt: "You are a helpful assistant.",
+      tools: {
+        webSearch: true,
+        webFetch: true,
+        memory: true,
+        imageGeneration: false,
+        browser: false,
+      },
+      maxTurns: 100,
+      maxSubagentDepth: 3,
+    },
+  },
+
+  memory: {
+    enabled: true,
+    chunkSize: 512,
+    chunkOverlap: 64,
+    searchLimit: 10,
+    vectorWeight: 0.7,
+    textWeight: 0.3,
+  },
+
+  sessions: {
+    compactionThreshold: 50,
+    maxSessions: 10000,
+  },
+
+  channels: {
+    // telegram: {
+    //   botToken: "${TELEGRAM_BOT_TOKEN}",
+    // },
+    // discord: {
+    //   botToken: "${DISCORD_BOT_TOKEN}",
+    //   applicationId: "${DISCORD_APP_ID}",
+    // },
+    // slack: {
+    //   botToken: "${SLACK_BOT_TOKEN}",
+    //   signingSecret: "${SLACK_SIGNING_SECRET}",
+    // },
+  },
+
+  logging: {
+    level: "info",
+    json: false,
+  },
+}

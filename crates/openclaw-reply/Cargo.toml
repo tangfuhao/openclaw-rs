@@ -1,0 +1,25 @@
+[package]
+name = "openclaw-reply"
+description = "Auto-reply message processing engine for OpenClaw"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+openclaw-core = { workspace = true }
+openclaw-config = { workspace = true }
+openclaw-agent = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+futures = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+dashmap = { workspace = true }
+parking_lot = { workspace = true }
+regex = { workspace = true }

@@ -1,0 +1,33 @@
+[package]
+name = "openclaw-agent"
+description = "AI Agent execution engine for OpenClaw"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+openclaw-core = { workspace = true }
+openclaw-config = { workspace = true }
+tokio = { workspace = true }
+tokio-stream = { workspace = true }
+futures = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+reqwest = { workspace = true }
+reqwest-eventsource = { workspace = true }
+tracing = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+dashmap = { workspace = true }
+parking_lot = { workspace = true }
+minijinja = { workspace = true }
+walkdir = { workspace = true }
+globset = { workspace = true }
+regex = { workspace = true }
+bytes = { workspace = true }
+url = { workspace = true }
+async-trait = "0.1"
+async-stream = "0.3"
